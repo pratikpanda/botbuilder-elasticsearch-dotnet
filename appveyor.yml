@@ -16,7 +16,7 @@ build_script:
 - ps: .\Build.ps1
 test: off
 artifacts:
-- path: .\Bot.Builder.Elasticsearch.Storage\artifacts\**\*.nupkg
+- path: .\libraries\Bot.Builder.Elasticsearch.Storage\artifacts\*.nupkg
   name: NuGet
 deploy:
 - provider: NuGet
