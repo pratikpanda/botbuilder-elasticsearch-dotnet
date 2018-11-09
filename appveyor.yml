@@ -16,9 +16,16 @@ build_script:
 - ps: .\Build.ps1
 test: off
 artifacts:
-- path: .\artifacts\**\*.nupkg
+- path: .\Bot.Builder.Elasticsearch.Storage\artifacts\**\*.nupkg
   name: NuGet
 deploy:
+- provider: NuGet
+  server: https://www.myget.org/F/pratikpanda-ci/api/v2/package
+  api_key:
+    secure: k9Fgm7+DHC2pNKjg+DDy5D147PFw5y0IFc5GnXxLgmfm7Em2BOLQLYkdeEIaUBOm
+  skip_symbols: true
+  on:
+    branch: master
 - provider: NuGet
   name: production
   api_key:
