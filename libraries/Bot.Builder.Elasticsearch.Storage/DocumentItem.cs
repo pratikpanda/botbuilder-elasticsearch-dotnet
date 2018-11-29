@@ -1,6 +1,7 @@
 ﻿// Licensed under the MIT License.
 
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace Bot.Builder.Elasticsearch.Storage
 {
@@ -29,5 +30,13 @@ namespace Bot.Builder.Elasticsearch.Storage
         /// The persisted object's state.
         /// </value>
         public JObject Document { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current timestamp.
+        /// </summary>
+        /// <value>
+        /// The current timestamp.
+        /// </value>
+        public DateTime Timestamp { get; set; }
     }
 }

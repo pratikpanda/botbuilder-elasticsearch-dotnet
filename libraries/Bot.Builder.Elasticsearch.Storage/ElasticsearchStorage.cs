@@ -20,12 +20,16 @@ namespace Bot.Builder.Elasticsearch.Storage
     /// </summary>
     public class ElasticsearchStorage : IStorage
     {
+        // Constants
+        public const string IndexMappingDepthLimitSetting = "mapping.depth.limit";
+        public const string RollingIndexDateFormat = "MM-dd-yyyy";
+
         // The list of illegal characters which should not be used in id field.
         private static readonly char[] IllegalKeyCharacters = new char[] { '\\', '?', '/', '#', ' ' };
 
         private static readonly JsonSerializer JsonSerializer = new JsonSerializer() { TypeNameHandling = TypeNameHandling.All };
 
-        // To handle concurrent requests to create indexes.
+        // Prevent issues in case multiple requests arrive to create index concurrently.
         private static SemaphoreSlim semaphore = new SemaphoreSlim(1);
 
         // Name of the index.
@@ -84,7 +88,7 @@ namespace Bot.Builder.Elasticsearch.Storage
             foreach (var key in keys)
             {
                 var deleteResponse = await elasticClient.DeleteAsync<DocumentItem>(SanitizeKey(key), d => d
-                .Index(indexName + "-" + DateTime.Now.ToString("MM-dd-yyyy")).Refresh(Refresh.True)).ConfigureAwait(false);
+                .Index(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat)).Refresh(Refresh.True)).ConfigureAwait(false);
             }
         }
 
@@ -114,6 +118,9 @@ namespace Bot.Builder.Elasticsearch.Storage
             {
                 var searchResponse = await elasticClient.SearchAsync<DocumentItem>(s => s
                 .Index(indexName)
+                .Sort(ss => ss
+                .Descending(p => p.Timestamp))
+                .Size(1)
                 .Query(q => q
                 .MatchPhrase(m => m
                 .Field(f => f.RealId)
@@ -163,10 +170,11 @@ namespace Bot.Builder.Elasticsearch.Storage
                     Id = SanitizeKey(change.Key),
                     RealId = change.Key,
                     Document = newState,
+                    Timestamp = DateTime.Now.ToUniversalTime()
                 };
 
                 var indexResponse = await elasticClient.IndexAsync(documentItem, i => i
-                .Index(indexName + "-" + DateTime.Now.ToString("MM-dd-yyyy")).Refresh(Refresh.True)).ConfigureAwait(false);
+                .Index(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat)).Refresh(Refresh.True)).ConfigureAwait(false);
             }
         }
 
@@ -216,7 +224,7 @@ namespace Bot.Builder.Elasticsearch.Storage
         private async Task InitializeAsync()
         {
             // Check whether the index exists or not.
-            var indexExistsResponse = await elasticClient.IndexExistsAsync(indexName + "-" + DateTime.Now.ToString("MM-dd-yyyy"));
+            var indexExistsResponse = await elasticClient.IndexExistsAsync(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat));
 
             if (!indexExistsResponse.Exists)
             {
@@ -228,10 +236,10 @@ namespace Bot.Builder.Elasticsearch.Storage
                     if (!indexExistsResponse.Exists)
                     {
                         // If the index does not exist, create a new one with the current date and alias it.
-                        var createIndexResponse = await elasticClient.CreateIndexAsync(indexName + "-" + DateTime.Now.ToString("MM-dd-yyyy"), c => c
-                        .Mappings(ms => ms.Map<DocumentItem>(m => m.AutoMap())).Settings(s => s.Setting("mapping.depth.limit", indexMappingDepthLimit))).ConfigureAwait(false);
+                        var createIndexResponse = await elasticClient.CreateIndexAsync(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat), c => c
+                        .Mappings(ms => ms.Map<DocumentItem>(m => m.AutoMap())).Settings(s => s.Setting(IndexMappingDepthLimitSetting, indexMappingDepthLimit))).ConfigureAwait(false);
 
-                        await elasticClient.AliasAsync(ac => ac.Add(a => a.Index(indexName + "-" + DateTime.Now.ToString("MM-dd-yyyy")).Alias(indexName))).ConfigureAwait(false);
+                        await elasticClient.AliasAsync(ac => ac.Add(a => a.Index(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat)).Alias(indexName))).ConfigureAwait(false);
                     }
                 }
                 finally
