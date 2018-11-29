@@ -22,9 +22,9 @@ var conversationState = new ConversationState(conversationDataStore);
 // User State Storage
 var userDataStorageOptions = new ElasticsearchStorageOptions();
 userDataStorageOptions.ElasticsearchEndpoint = new Uri(elasticsearchStorageSettings.ElasticsearchEndpoint);
-userDataStorageOptions.UserName = elasticsearchStorageSettings.UserName;
-userDataStorageOptions.Password = elasticsearchStorageSettings.Password;
-userDataStorageOptions.IndexName = elasticsearchStorageSettings.ConversationDataIndexName;
+userDataStorageOptions.UserName = "xxxxx";
+userDataStorageOptions.Password = "yyyyy";
+userDataStorageOptions.IndexName = "user-data";
 userDataStorageOptions.IndexMappingDepthLimit = 100000;
 
 IStorage userDataStore = new ElasticsearchStorage(userDataStorageOptions);
