@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/9m5pit2w7v3c8nl2?svg=true)](https://ci.appveyor.com/project/pratikpanda/botbuilder-elasticsearch-dotnet)
+[![Build status](https://ci.appveyor.com/api/projects/status/9m5pit2w7v3c8nl2/branch/master?svg=true)](https://ci.appveyor.com/project/pratikpanda/botbuilder-elasticsearch-dotnet/branch/master)
 
 # botbuilder-elasticsearch-dotnet
 Repository for Elasticsearch based extensions for the Bot Builder .NET SDK.
