@@ -53,6 +53,6 @@ EnsurePsbuildInstalled
 
 exec { & dotnet restore }
 
-Invoke-MSBuild
+dotnet build
 
 exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.Storage -c Release -o .\artifacts }
