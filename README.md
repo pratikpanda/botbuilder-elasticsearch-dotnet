@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/9m5pit2w7v3c8nl2?svg=true)](https://ci.appveyor.com/project/pratikpanda/botbuilder-elasticsearch-dotnet)
+[![Build status](https://ci.appveyor.com/api/projects/status/9m5pit2w7v3c8nl2/branch/master?svg=true)](https://ci.appveyor.com/project/pratikpanda/botbuilder-elasticsearch-dotnet/branch/master)
 
 # botbuilder-elasticsearch-dotnet
 Repository for Elasticsearch based extensions for the Bot Builder .NET SDK.
@@ -18,4 +18,4 @@ Please contribute to this project, in the form of bug fixes, enhancements or new
 ## Extensions
 | Name | Description | NuGet |
 | ------ | ------ | ------ |
-| [Elasticsearch Storage Extension](libraries/Bot.Builder.Elasticsearch.Storage) | Elasticsearch based storage extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-Package-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.Storage/) |
+| [Elasticsearch Storage Extension](libraries/Bot.Builder.Elasticsearch.Storage) | Elasticsearch based storage extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.1-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.Storage/) |
