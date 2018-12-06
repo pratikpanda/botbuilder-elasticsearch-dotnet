@@ -125,20 +125,14 @@ namespace Elasticsearch.TranscriptLogger.Integration.Tests
             activity.Conversation.Id = "TestConversationId";
             activity.Timestamp = DateTimeOffset.Now;
 
-            // Log first activity.
-            await transcriptLogger.LogActivityAsync(activity);
+            for (int i = 0; i < 50; i++)
+            {
+                // Log activity.
+                await transcriptLogger.LogActivityAsync(activity);
 
-            // Update timestamp.
-            activity.Timestamp = DateTimeOffset.Now.AddMilliseconds(1);
-
-            // Log second activity.
-            await transcriptLogger.LogActivityAsync(activity);
-
-            // Update timestamp.
-            activity.Timestamp = DateTimeOffset.Now.AddMilliseconds(1);
-
-            // Log third activity.
-            await transcriptLogger.LogActivityAsync(activity);
+                // Update timestamp.
+                activity.Timestamp = DateTimeOffset.Now.AddSeconds(1);
+            }
         }
     }
 }

@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Elasticsearch.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elasticsearch.TranscriptLogger.Integration.Tests", "tests\Elasticsearch.TranscriptLogger.Integration.Tests\Elasticsearch.TranscriptLogger.Integration.Tests.csproj", "{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Elasticsearch.TranscriptStore", "libraries\Bot.Builder.Elasticsearch.TranscriptStore\Bot.Builder.Elasticsearch.TranscriptStore.csproj", "{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elasticsearch.TranscriptStore.Integration.Tests", "tests\Elasticsearch.TranscriptStore.Integration.Tests\Elasticsearch.TranscriptStore.Integration.Tests.csproj", "{292A4957-076F-45F9-844E-0B94CED6D080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292A4957-076F-45F9-844E-0B94CED6D080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292A4957-076F-45F9-844E-0B94CED6D080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292A4957-076F-45F9-844E-0B94CED6D080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292A4957-076F-45F9-844E-0B94CED6D080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +64,8 @@ Global
 		{A77CAF3F-3AD8-407A-AB68-2A215FC98C7D} = {A9E19531-8DC0-4A44-879A-53B3E90DC91E}
 		{A2714A3E-CF1F-45CE-9B49-4E7D4C4F4712} = {5CDEA05F-FA8A-4D69-A002-ADD357770338}
 		{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479} = {A9E19531-8DC0-4A44-879A-53B3E90DC91E}
+		{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D} = {5CDEA05F-FA8A-4D69-A002-ADD357770338}
+		{292A4957-076F-45F9-844E-0B94CED6D080} = {A9E19531-8DC0-4A44-879A-53B3E90DC91E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1923F3DE-C391-48A2-B80A-8CC7B2E68BF1}

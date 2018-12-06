@@ -57,3 +57,4 @@ dotnet build --configuration Release
 
 exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.Storage -c Release -o .\artifacts }
 exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.TranscriptLogger -c Release -o .\artifacts }
+exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.TranscriptStore -c Release -o .\artifacts }

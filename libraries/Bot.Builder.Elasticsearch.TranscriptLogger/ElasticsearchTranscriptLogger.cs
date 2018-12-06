@@ -32,6 +32,8 @@ namespace Bot.Builder.Elasticsearch.TranscriptLogger
 
         private ElasticClient elasticClient;
 
+        public const string IndexMappingTotalFieldsLimitSetting = "mapping.total_fields.limit";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ElasticsearchTranscriptLogger"/> class.
         /// </summary>
@@ -70,7 +72,7 @@ namespace Bot.Builder.Elasticsearch.TranscriptLogger
                 ChannelId = activity.ChannelId,
                 ConversationId = activity.Conversation.Id,
                 Timestamp = activity.Timestamp,
-                Activity = activity
+                Activity = (Activity)activity
             };
 
             var indexResponse = await elasticClient.IndexAsync(documentItem, i => i
@@ -120,9 +122,9 @@ namespace Bot.Builder.Elasticsearch.TranscriptLogger
                     {
                         // If the index does not exist, create a new one with the current date and alias it.
                         var createIndexResponse = await elasticClient.CreateIndexAsync(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat), c => c
-                        .Mappings(ms => ms.Map<DocumentItem>(m => m.AutoMap()))).ConfigureAwait(false);
+                        .Mappings(ms => ms.Map<DocumentItem>(m => m.AutoMap())).Settings(s => s.Setting(IndexMappingTotalFieldsLimitSetting, 100000))).ConfigureAwait(false);
 
-                        await elasticClient.AliasAsync(ac => ac.Add(a => a.Index(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat)).Alias(indexName))).ConfigureAwait(false);
+                        var aliasResponse = await elasticClient.AliasAsync(ac => ac.Add(a => a.Index(indexName + "-" + DateTime.Now.ToString(RollingIndexDateFormat)).Alias(indexName))).ConfigureAwait(false);
                     }
                 }
                 finally

@@ -1,11 +1,10 @@
 ﻿using Microsoft.Bot.Schema;
 using Nest;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bot.Builder.Elasticsearch.TranscriptLogger
+namespace Bot.Builder.Elasticsearch.TranscriptStore
 {
     [ElasticsearchType(IdProperty = nameof(Id))]
     public class DocumentItem
