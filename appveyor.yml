@@ -18,6 +18,8 @@ test: off
 artifacts:
 - path: .\libraries\Bot.Builder.Elasticsearch.Storage\artifacts\*.nupkg
   name: NuGet
+- path: .\libraries\Bot.Builder.Elasticsearch.TranscriptLogger\artifacts\*.nupkg
+name: NuGet
 deploy:
 - provider: NuGet
   server: https://www.myget.org/F/pratikpanda-ci/api/v2/package

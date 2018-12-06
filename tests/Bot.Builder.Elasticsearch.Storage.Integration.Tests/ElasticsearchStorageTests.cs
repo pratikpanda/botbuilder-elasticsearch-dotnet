@@ -15,7 +15,6 @@ namespace Bot.Builder.Elasticsearch.Storage.Integration.Tests
     [TestClass]
     [TestCategory("Integration")]
     [TestCategory("Storage")]
-    [TestCategory("Storage - Elasticsearch")]
     public class ElasticsearchStorageTests : StorageBaseTests
     {
         private string elasticsearchEndpoint;
