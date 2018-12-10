@@ -4,9 +4,10 @@ Elasticsearch based transcript store extension for bots created using Microsoft 
 ## Usage
 The extension uses NEST as the native client for connecting and working with Elasticsearch. Therefore the configuration options have been created following NEST standards and guidelines.
 
-Following are examples where the logger has been used to log activities in elasticsearch.
+To instantiate the transcript store, please refer the code snippet provided below:
 
 ```csharp
+// Instantiate the Elasticsearch transcript store.
 var elasticsearchTranscriptStoreOptions = new ElasticsearchTranscriptStoreOptions();
 elasticsearchTranscriptStoreOptions.ElasticsearchEndpoint = new Uri("http://localhost:9200");
 elasticsearchTranscriptStoreOptions.UserName = "xxxxx";
@@ -14,6 +15,49 @@ elasticsearchTranscriptStoreOptions.Password = "yyyyy";
 elasticsearchTranscriptStoreOptions.IndexName = "transcript-store-data";
 
 ITranscriptStore transcriptStore = new ElasticsearchTranscriptStore(elasticsearchTranscriptStoreOptions);
+```
+
+To log an activity to the transcript store:
+
+```csharp
+// Log an activity to the transcript store.
+await transcriptStore.LogActivityAsync(activity)
+```
+
+To retrieve transcripts from the transcript store:
+
+```csharp
+// Retrieve transcripts from the transcript store.
+var result = new List<IActivity>();
+var pagedResult = new PagedResult<IActivity>();
+do
+{
+    pagedResult = await transcriptStore.GetTranscriptActivitiesAsync(activity.ChannelId, activity.Conversation.Id, pagedResult.ContinuationToken);
+
+    foreach (var item in pagedResult.Items)
+    {
+        result.Add(item);
+    }
+}
+while (pagedResult.ContinuationToken != null);
+```
+
+To list transcripts from the transcript store:
+
+```csharp
+// List transcripts from the transcript store.
+var result = new List<TranscriptInfo>();
+var pagedResult = new PagedResult<TranscriptInfo>();
+do
+{
+    pagedResult = await transcriptStore.ListTranscriptsAsync(activity.ChannelId, pagedResult.ContinuationToken);
+
+    foreach (var item in pagedResult.Items)
+    {
+        result.Add(item);
+    }
+}
+while (pagedResult.ContinuationToken != null);
 ```
 
 ## Behaviour
