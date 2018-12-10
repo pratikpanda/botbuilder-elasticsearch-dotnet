@@ -8,10 +8,10 @@
 
 if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
 
-exec { & dotnet restore }
+dotnet restore
 
 dotnet build --configuration Release
 
-exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.Storage -c Release -o .\artifacts }
-exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.TranscriptLogger -c Release -o .\artifacts }
-exec { & dotnet pack .\libraries\Bot.Builder.Elasticsearch.TranscriptStore -c Release -o .\artifacts }
+dotnet pack .\libraries\Bot.Builder.Elasticsearch.Storage -c Release -o .\artifacts
+dotnet pack .\libraries\Bot.Builder.Elasticsearch.TranscriptLogger -c Release -o .\artifacts
+dotnet pack .\libraries\Bot.Builder.Elasticsearch.TranscriptStore -c Release -o .\artifacts
