@@ -21,7 +21,7 @@ To log an activity to the transcript store:
 
 ```csharp
 // Log an activity to the transcript store.
-await transcriptStore.LogActivityAsync(activity)
+await transcriptStore.LogActivityAsync(activity);
 ```
 
 To retrieve transcripts from the transcript store:
