@@ -17,13 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Build.ps1 = Build.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Elasticsearch.TranscriptLogger", "libraries\Bot.Builder.Elasticsearch.TranscriptLogger\Bot.Builder.Elasticsearch.TranscriptLogger.csproj", "{A2714A3E-CF1F-45CE-9B49-4E7D4C4F4712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.Builder.Elasticsearch.TranscriptLogger", "libraries\Bot.Builder.Elasticsearch.TranscriptLogger\Bot.Builder.Elasticsearch.TranscriptLogger.csproj", "{A2714A3E-CF1F-45CE-9B49-4E7D4C4F4712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elasticsearch.TranscriptLogger.Integration.Tests", "tests\Elasticsearch.TranscriptLogger.Integration.Tests\Elasticsearch.TranscriptLogger.Integration.Tests.csproj", "{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elasticsearch.TranscriptLogger.Integration.Tests", "tests\Elasticsearch.TranscriptLogger.Integration.Tests\Elasticsearch.TranscriptLogger.Integration.Tests.csproj", "{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Elasticsearch.TranscriptStore", "libraries\Bot.Builder.Elasticsearch.TranscriptStore\Bot.Builder.Elasticsearch.TranscriptStore.csproj", "{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.Builder.Elasticsearch.TranscriptStore", "libraries\Bot.Builder.Elasticsearch.TranscriptStore\Bot.Builder.Elasticsearch.TranscriptStore.csproj", "{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elasticsearch.TranscriptStore.Integration.Tests", "tests\Elasticsearch.TranscriptStore.Integration.Tests\Elasticsearch.TranscriptStore.Integration.Tests.csproj", "{292A4957-076F-45F9-844E-0B94CED6D080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elasticsearch.TranscriptStore.Integration.Tests", "tests\Elasticsearch.TranscriptStore.Integration.Tests\Elasticsearch.TranscriptStore.Integration.Tests.csproj", "{292A4957-076F-45F9-844E-0B94CED6D080}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{A9C15317-7C53-4460-B4CE-813B2BC1A377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Elasticsearch.TranscriptStore.Manager", "utilities\Bot.Builder.Elasticsearch.TranscriptStore.Manager\Bot.Builder.Elasticsearch.TranscriptStore.Manager.csproj", "{A3C5A4AB-217D-40E8-A501-90F473326312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elasticsearch.TranscriptStore.ConsoleClient", "utilities\Elasticsearch.TranscriptStore.ConsoleClient\Elasticsearch.TranscriptStore.ConsoleClient.csproj", "{848B1746-C26D-4382-83AB-7DB2923B4EE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +61,14 @@ Global
 		{292A4957-076F-45F9-844E-0B94CED6D080}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{292A4957-076F-45F9-844E-0B94CED6D080}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{292A4957-076F-45F9-844E-0B94CED6D080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C5A4AB-217D-40E8-A501-90F473326312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C5A4AB-217D-40E8-A501-90F473326312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C5A4AB-217D-40E8-A501-90F473326312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C5A4AB-217D-40E8-A501-90F473326312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{848B1746-C26D-4382-83AB-7DB2923B4EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848B1746-C26D-4382-83AB-7DB2923B4EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848B1746-C26D-4382-83AB-7DB2923B4EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848B1746-C26D-4382-83AB-7DB2923B4EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +80,8 @@ Global
 		{BA5CE88E-E536-47A5-9CA1-72E3EE0BE479} = {A9E19531-8DC0-4A44-879A-53B3E90DC91E}
 		{021400EF-B4A0-49E6-BAFA-1AD2526A6F0D} = {5CDEA05F-FA8A-4D69-A002-ADD357770338}
 		{292A4957-076F-45F9-844E-0B94CED6D080} = {A9E19531-8DC0-4A44-879A-53B3E90DC91E}
+		{A3C5A4AB-217D-40E8-A501-90F473326312} = {A9C15317-7C53-4460-B4CE-813B2BC1A377}
+		{848B1746-C26D-4382-83AB-7DB2923B4EE3} = {A9C15317-7C53-4460-B4CE-813B2BC1A377}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1923F3DE-C391-48A2-B80A-8CC7B2E68BF1}
