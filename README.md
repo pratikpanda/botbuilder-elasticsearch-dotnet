@@ -3,9 +3,10 @@
 # botbuilder-elasticsearch-dotnet
 Repository for Elasticsearch based extensions for the Bot Builder .NET SDK.
 
-To see the list of current extensions available for the Bot Builder .NET SDK, use the link below to jump to the extensions section.
+To see the list of current extensions and utilities available for the Bot Builder .NET SDK, use the link below to jump to the extensions or utilities section.
 
 * [Extensions](#extensions)
+* [Utilities](#utilities)
 
 ## Installation
 
@@ -21,3 +22,9 @@ Please contribute to this project, in the form of bug fixes, enhancements or new
 | [Elasticsearch Storage](libraries/Bot.Builder.Elasticsearch.Storage) | Elasticsearch based storage extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.3-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.Storage/) |
 | [Elasticsearch Transcript Logger](libraries/Bot.Builder.Elasticsearch.TranscriptLogger) | Elasticsearch based transcript logger extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.3-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.TranscriptLogger/) |
 | [Elasticsearch Transcript Store](libraries/Bot.Builder.Elasticsearch.TranscriptStore) | Elasticsearch based transcript store extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.3-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.TranscriptStore/) |
+
+## Utilities
+| Name | Description |
+| ------ | ------ |
+| [Elasticsearch Transcript Store Manager](utilities/Bot.Builder.Elasticsearch.TranscriptStore.Manager) | Transcript store manager for the Elasticsearch based transcript store that allows for retrieval, deletion of activity transcripts. The component also allows for generation of transcripts as a .transcript file.|
+| [Elasticsearch Transcript Store Console Client](utilities/Elasticsearch.TranscriptStore.ConsoleClient) | Console client for the Elasticsearch based transcript store that utilizes the transcript store manager. |
