@@ -4,7 +4,7 @@ Elasticsearch based transcript logger extension for bots created using Microsoft
 ## Usage
 The extension uses NEST as the native client for connecting and working with Elasticsearch. Therefore the configuration options have been created following NEST standards and guidelines.
 
-Following are examples where the logger has been used to log activities in elasticsearch.
+To instantiate the transcript logger, please refer to the code snippet below:
 
 ```csharp
 var elasticsearchTranscriptLoggerOptions = new ElasticsearchTranscriptLoggerOptions();
@@ -13,8 +13,15 @@ elasticsearchTranscriptLoggerOptions.UserName = "xxxxx";
 elasticsearchTranscriptLoggerOptions.Password = "yyyyy";
 elasticsearchTranscriptLoggerOptions.IndexName = "transcript-log-data";
 
-ITranscriptLogger transcriptLogger = new ElasticsearchTranscript(elasticsearchTranscriptLoggerOptions);
+ITranscriptLogger transcriptLogger = new ElasticsearchTranscriptLogger(elasticsearchTranscriptLoggerOptions);
 ```
+To log an activity using the transcript logger:
+
+```csharp
+// Log an activity using the transcript logger.
+await transcriptLogger.LogActivityAsync(activity);
+```
+
 
 ## Behaviour
 The component automatically creates and maintains rolling indexes for storing data. This means if you are specifying the `IndexName` as transcript-log-data, on any given day the index would be named as transcript-log-data-current-date for e.g. transcript-log-data-09-27-2018. This would help to expire/delete old indexes by running a periodic job.
