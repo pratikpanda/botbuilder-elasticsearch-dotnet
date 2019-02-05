@@ -17,11 +17,11 @@ Each extension is available individually from NuGet. See each individual compone
 Please contribute to this project, in the form of bug fixes, enhancements or new extensions (based on elasticsearch only). Please fork the repo and raise a PR if you have something you would like me to review for inclusion.  If you want to discuss an idea first then the best way to do this right now is to raise a GitHub issue.
 
 ## Extensions
-| Name | Description | NuGet |
-| ------ | ------ | ------ |
-| [Elasticsearch Storage](libraries/Bot.Builder.Elasticsearch.Storage) | Elasticsearch based storage extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.3-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.Storage/) |
-| [Elasticsearch Transcript Logger](libraries/Bot.Builder.Elasticsearch.TranscriptLogger) | Elasticsearch based transcript logger extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.3-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.TranscriptLogger/) |
-| [Elasticsearch Transcript Store](libraries/Bot.Builder.Elasticsearch.TranscriptStore) | Elasticsearch based transcript store extension for bots created using Microsoft Bot Framework. | [![NuGet version](https://img.shields.io/badge/NuGet-0.1.3-blue.svg)](https://www.nuget.org/packages/Bot.Builder.Elasticsearch.TranscriptStore/) |
+| Name | Description | NuGet | Downloads |
+| ------ | ------ | ------ | ------ |
+| [Elasticsearch Storage](libraries/Bot.Builder.Elasticsearch.Storage) | Elasticsearch based storage extension for bots created using Microsoft Bot Framework. | [![NuGet](https://img.shields.io/nuget/vpre/bot.builder.elasticsearch.storage.svg)](https://www.nuget.org/packages/bot.builder.elasticsearch.storage) | [![NuGet](https://img.shields.io/nuget/dt/bot.builder.elasticsearch.storage.svg)](https://www.nuget.org/packages/bot.builder.elasticsearch.storage) |
+| [Elasticsearch Transcript Logger](libraries/Bot.Builder.Elasticsearch.TranscriptLogger) | Elasticsearch based transcript logger extension for bots created using Microsoft Bot Framework. |  [![NuGet](https://img.shields.io/nuget/vpre/bot.builder.elasticsearch.transcriptlogger.svg)](https://www.nuget.org/packages/bot.builder.elasticsearch.transcriptlogger) | [![NuGet](https://img.shields.io/nuget/dt/bot.builder.elasticsearch.transcriptlogger.svg)](https://www.nuget.org/packages/bot.builder.elasticsearch.transcriptlogger) |
+| [Elasticsearch Transcript Store](libraries/Bot.Builder.Elasticsearch.TranscriptStore) | Elasticsearch based transcript store extension for bots created using Microsoft Bot Framework. |  [![NuGet](https://img.shields.io/nuget/vpre/bot.builder.elasticsearch.transcriptstore.svg)](https://www.nuget.org/packages/bot.builder.elasticsearch.transcriptstore) | [![NuGet](https://img.shields.io/nuget/dt/bot.builder.elasticsearch.transcriptlogger.svg)](https://www.nuget.org/packages/bot.builder.elasticsearch.transcriptstore) |
 
 ## Utilities
 | Name | Description |
